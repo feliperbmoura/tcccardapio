@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.fa-solid.fa-user-circle{
+    color: white;
+    margin-right: 10px;
+}
+
+.fa-unlock-alt{
+    margin-right: 10px;
+    color: white;
+}
+
+header{
+    margin-bottom: 60px;
+}
+
+
+
+main{
+    background-color: #562b2db4;
+    width: 500px;
+    margin: auto;
+    border-radius: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 100px;
+}
+
+
+.section-first{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 150px;
+    
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form img{
+    height: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#txt1{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    width: 25em;
+    margin-bottom: 32px;
+    background-color: #ffcb45;
+}
+
+
+
+#email{
+    font-weight: 600;
+    font-family: 'poppins', sans-serif;
+    color: rgb(255, 255, 255);
+    border-style: none;
+    line-height: 10px;
+    height: 5em;
+}
+
+#email > input{
+    height: 3em;
+    width: 25em;
+}
+
+
+
+#senha{
+    font-weight: 600;
+    font-family: 'poppins', sans-serif;
+    color: white;
+    border-style: none;
+    line-height: 15px;
+
+}
+
+#senha > input{
+    height: 3em;
+    width: 25em;
+}
+
+
+
+#senha2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#senha2 > input{
+    height: 3em;
+}
+
+
+
+
+
+
+#remember{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    
+    gap: 7.5em;
+}
+
+#remember a {
+    text-decoration: none;
+    color: #ffcb45;
+}
+
+#remember a:hover {
+    text-decoration: underline;
+    font-size: 16.1px;
+}
+
+#botao{
+    border-style: none;
+    width: 25em;
+    height: 3em;
+    color: rgb(0, 0, 0);
+    margin-bottom: 30px;
+    border-radius: 3px;
+    background-color: rgb(245, 207, 157);
+    transition-duration: 0.3s ;
+    box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.445);
+}
+
+
+#botao:hover{
+    border-style: none;
+    height: 3em;
+    border-radius: 3px;
+    background-color: rgb(253, 219, 131)
+}
+
+#icons{
+    display: flex;
+    gap: 60px;
+}
+
+#icons button{
+    border-style: none;
+    border-radius: 60px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 30px;
+}
+#login > a {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 680px) {
+    header{
+        margin-bottom: 50px;
+    }
+
+    form img{
+        height: 100px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    main{
+        background-color: #562b2db4;
+        width: 95%;
+        margin: auto;
+        margin-bottom: 100px;
+    }
+    
+    .section-first{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 150px;
+        
+    }
+    
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #txt1{
+        text-align: center;
+        color: rgb(255, 255, 255);
+        padding: 10px;
+        width: 21em;
+        margin-bottom: 32px;
+        background-color: #ffcb45;
+    }
+    
+    #email{
+        font-weight: 600;
+        font-family: 'poppins', sans-serif;
+        color: rgb(255, 255, 255);
+        border-style: none;
+        line-height: 10px;
+        height: 5em;
+    }
+    
+    #email > input{
+        height: 3em;
+        width: 21em;
+    }
+    
+    #senha{
+        font-weight: 600;
+        font-family: 'poppins', sans-serif;
+        color: white;
+        border-style: none;
+        line-height: 10px;
+    }
+    
+    #senha > input{
+        height: 3em;
+        width: 21em;
+    }
+    
+    #remember{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        
+        gap: 3.6em;
+    }
+    
+    #remember a {
+        text-decoration: none;
+        color: #ffcb45;
+    }
+    
+    #remember a:hover {
+        text-decoration: underline;
+        font-size: 16.1px;
+    }
+    
+    #botao{
+        border-style: none;
+        width: 21em;
+        height: 3em;
+        color: rgb(0, 0, 0);
+        margin-bottom: 30px;
+        border-radius: 3px;
+        background-color: rgb(245, 207, 157);
+        transition-duration: 0.3s ;
+        box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.445);
+    }
+    
+    
+    #botao:hover{
+        border-style: none;
+        height: 3em;
+        border-radius: 3px;
+        background-color: rgb(253, 219, 131)
+    }
+    
+}

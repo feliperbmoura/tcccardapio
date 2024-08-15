@@ -1,0 +1,142 @@
+#menu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+}
+
+#dishes {
+    flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.dish {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    gap: 18px;
+    width: 25%;
+    padding: 20px;
+    background-color: #ffffff1f;
+    position: relative;
+    color: white;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.103);
+    overflow: hidden;
+}
+
+.dish-heart {
+    position: absolute;
+    display: flex;
+    background-color: #e9a20e;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.56rem;
+    color: rgb(255, 255, 255);
+    width: 20%;
+    height: 70px;
+    right: -10px;
+    top: -10px;
+    border-radius: 0px 37.5px 0px 42px;
+} 
+
+.dish-description{
+    color: #000000;
+    text-align: center;
+}
+
+.dish-rate i {
+    color: #e9a20e;
+}
+
+.dish-price{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+@media screen and (max-width: 1170px) {
+    #dishes {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .dish {
+        width: calc(50% - 12px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #dishes {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .dish {
+        width: calc(100% - 12px);
+    }
+
+    #menu .section-subtitle{
+        text-align: center;
+    }
+}
+
+
+
+.dish-principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    gap: 18px;
+    width: 25%;
+    padding: 20px;
+    background-color: #ffffff1f;
+    position: relative;
+    color: white;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.103);
+    overflow: hidden;
+}
+
+
+#dishes-principal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+
+@media screen and (max-width: 1170px) {
+    #dishes-principal{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .dish-principal {
+        width: calc(50% - 12px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #dishes-principal {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .dish-principal{
+        width: calc(100% - 12px);
+    }
+
+    #menu .section-subtitle{
+        text-align: center;
+    }
+}
