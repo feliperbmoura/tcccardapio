@@ -18,6 +18,7 @@
       </div>
       <div class="modal-body">
         <form id="form">
+        <input type="text" class="form-control" id="txtCod" name="txtCod" placeholder="Nome do produto">
             <div class="row">
                 <div class="col-6">
                     <label for="exampleFormControlInput1" class="form-label">Produto</label>

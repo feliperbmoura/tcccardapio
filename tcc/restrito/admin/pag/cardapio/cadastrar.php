@@ -11,9 +11,15 @@ $qtdM=$_POST['txtQtdM'];
 $validade=$_POST['txtValidade'];
 $descricao=$_POST['txtdesc'];
 $foto='sem-foto.jpg';
+$id = $_POST['txtCod'];
 
 
-$query = $pdo->prepare("INSERT INTO produtos(nome,preco,categoria,data_validade,quantidade,quantidade_min,descricao,fornecedor,foto) VALUE(:nome,:preco,:categoria,:data_validade,:quantidade,:quantidade_min,:descricao,:fornecedor,:foto)");
+if($id == ''){
+    $query = $pdo->prepare("INSERT INTO produtos(nome,preco,categoria,data_validade,quantidade,quantidade_min,descricao,fornecedor,foto) VALUE(:nome,:preco,:categoria,:data_validade,:quantidade,:quantidade_min,:descricao,:fornecedor,:foto)");
+}else{
+    $query = $pdo->prepare("UPDATE produtos SET nome=:nome,preco=:preco,categoria=:categoria,data_validade=:data_validade,quantidade=:quantidade,quantidade_min=:quantidade_min,descricao=:descricao,fornecedor=:fornecedor,foto=:foto WHERE id_produto = $id");
+}
+
 $query->bindValue(":nome","$produto");
 $query->bindValue(":preco","$preco");
 $query->bindValue(":categoria","$cat");

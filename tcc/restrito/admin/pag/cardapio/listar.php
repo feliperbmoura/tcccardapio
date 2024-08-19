@@ -16,7 +16,8 @@ $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $total = @count($res);
 
 if($total > 0){
-    $html = "<table class='table'>
+  echo <<<HTML
+  <table class='table'>
     <thead>
       <tr>
         <th scope='col'>Código</th>
@@ -28,7 +29,8 @@ if($total > 0){
         <th scope='col'>Ações</th>
       </tr>
     </thead>
-    <tbody>";
+    <tbody>                        
+  HTML;
 
   for($i=0; $i<=$total-1;$i++){
       $codigo = $res[$i]['id_produto'];
@@ -37,28 +39,64 @@ if($total > 0){
       $forn = $res[$i]['fornecedor'];
       $qtd = $res[$i]['quantidade'];
       $cat = $res[$i]['categoria'];
-      $html .= "<tr>
-      <th scope='row'>{$codigo}</th>
-      <td>{$nome}</td>
-      <td>{$preco}</td>
-      <td>{$forn}</td>
-      <td>{$qtd}</td>
-      <td>{$cat}</td>
-      <td><button class='btn btn-warning' onclick='editar($codigo)'>Editar</button></td>
-    </tr>";
+      $qtdm = $res[$i]['quantidade_min'];
+      $validade = $res[$i]['data_validade'];
+      $desc = $res[$i]['descricao'];
+      $foto = $res[$i]['foto'];
+
+    echo <<<HTML
+<tr>
+<th scope='row'>{$codigo}</th>   
+<td>{$nome}</td>   
+<td>{$preco}</td> 
+<td>{$forn}</td>
+<td>{$qtd}</td> 
+<td>{$cat}</td>   
+<td><button class="btn btn-warning" onclick="editar('{$codigo}','{$nome}','{$preco}','{$cat}','{$forn}','{$qtd}','{$qtdm}','{$validade}','{$desc}','{$foto}')">Editar</button>
+<button class="btn btn-danger" onclick="excluir('{$codigo}')">Excluir</button>
+</td>                          
+HTML;
   }
 
-  $html .= "</tbody>
-  </table>";
-  echo $html;
-}else{
-    echo 'Nenhum registro encontrado';
+  echo <<<HTML
+</tbody>
+</table>                       
+HTML;
 }
 ?>
 <script type="text/javascript">
   function editar(codigo,nome,preco,categoria,fornecedor,qtd,qtdm,validade,descricao,foto){
     $("#titulo").text("Editar Produto");
+    $('#txtProduto').val(nome);
+    $('#txtPreco').val(preco);
+    $('#txtCat').val(categoria);
+    $('#txtForn').val(fornecedor);
+    $('#txtQtd').val(qtd);
+    $('#txtQtdM').val(qtdm);
+    $('#txtValidade').val(validade);
+    $('#txtdesc').val(descricao);
+    $('#txtCod').val(codigo);
+
     
     $("#modalinserir").modal('show');
+  }
+
+  function excluir(codigo){
+    $.ajax({
+      url: 'pag/cardapio/excluir.php',
+      method: 'POST',
+      data: {codigo},
+      dataType: "html",
+      success: function (mensagem) {
+                if (mensagem.trim() == "salvo com sucesso") {
+                   listarcardapio();
+                   $('#modalinserir').modal('hide');
+                } else {
+                    alert(mensagem);
+            }
+
+
+        }
+    });
   }
 </script>
