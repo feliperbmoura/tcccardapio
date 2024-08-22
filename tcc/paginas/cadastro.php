@@ -77,10 +77,15 @@
             data: formData,
 
             success: function (mensagem) {
-                if (mensagem.trim() == "Salvo com Sucesso") {
-                    alert('Cadastrado com Sucesso!');
-                } else {
+                if (mensagem.trim() == "salvo com sucesso") {
                     alert(mensagem);
+                    window.location='index.php?pag=login';
+                } else {
+                    Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: mensagem,
+                    });
                 }
 
 

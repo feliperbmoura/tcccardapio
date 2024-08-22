@@ -18,7 +18,7 @@
       </div>
       <div class="modal-body">
         <form id="form">
-        <input type="text" class="form-control" id="txtCod" name="txtCod" placeholder="Nome do produto">
+        <input type="hidden" class="form-control" id="txtCod" name="txtCod" placeholder="Nome do produto">
             <div class="row">
                 <div class="col-6">
                     <label for="exampleFormControlInput1" class="form-label">Produto</label>
@@ -68,13 +68,19 @@
             <div class="row">
                 <div class="col-12">
                     <label for="exampleFormControlInput1" class="form-label">Descrição</label>
-                    <textarea id="txtdesc" name="txtdesc" ></textarea>
+                    <!-- <textarea class="tinymce" data-tinymce="data-tinymce" name="txtdesc" id="txtdesc"></textarea> -->
+                    <textarea id="txtdesc" name="txtdesc"></textarea>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12">
+                <div class="col-6">
                     <label for="exampleFormControlInput1" class="form-label">Foto</label>
-                    <input type="file" class="form-control" id="txtfoto" name="txtfoto" placeholder="name@example.com">
+                    <input type="file" class="form-control" id="txtfoto" name="txtfoto"  onChange="carregarIMG();">
+                </div>
+                <div class="col-6">
+                    <div id="divIMG">
+                        <img src="../../imagens/dounts/sem-foto.jpg" id="target" width="100px">
+                    </div>
                 </div>
             </div>
         
@@ -88,6 +94,8 @@
   </div>
 </div>
 
+
+<script src="../../vendor/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
 <script
         src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
@@ -95,6 +103,10 @@
 <script type="text/javascript">
     $(document).ready(function(){
         listarcardapio();
+        tinymce.init({
+            selector: 'textarea',
+            license_key: 'gpl'
+        });
     });
 
     function listarcardapio(pagina){
@@ -113,6 +125,7 @@
     }
 
     function inserir(){
+        limpar();
         $("#titulo").text("Inserir Produto");
         $("#modalinserir").modal('show');
     }
@@ -145,4 +158,24 @@
         });
 
     });
+
+    function carregarIMG() {
+        var target = document.getElementById('target');
+        var file = document.querySelector("#txtfoto").files[0];
+
+        var reader = new FileReader();
+
+        reader.onloadend = function () {
+            target.src = reader.result;
+        };
+
+        if (file) {
+            reader.readAsDataURL(file);
+
+        } else {
+            target.src = "";
+        }
+    }
+
+
 </script>

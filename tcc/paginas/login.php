@@ -13,7 +13,9 @@
 session_start();
 if (isset($_SESSION['usuario'])) {
     echo $_SESSION['usuario']['nome'];
-    echo "<a href='sair.php'>Sair</a>";
+   ?>
+   <a href='sair.php'>Sair</a>
+   <?php
 } else {
     ?>
     <main id="content">

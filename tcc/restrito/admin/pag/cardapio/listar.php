@@ -66,6 +66,7 @@ HTML;
 ?>
 <script type="text/javascript">
   function editar(codigo,nome,preco,categoria,fornecedor,qtd,qtdm,validade,descricao,foto){
+    limpar();
     $("#titulo").text("Editar Produto");
     $('#txtProduto').val(nome);
     $('#txtPreco').val(preco);
@@ -74,8 +75,10 @@ HTML;
     $('#txtQtd').val(qtd);
     $('#txtQtdM').val(qtdm);
     $('#txtValidade').val(validade);
-    $('#txtdesc').val(descricao);
     $('#txtCod').val(codigo);
+    tinymce.get('txtdesc').setContent(descricao);
+    $('#txtfoto').val();
+    $('#target').attr('src','../../imagens/'+foto);
 
     
     $("#modalinserir").modal('show');
@@ -98,5 +101,20 @@ HTML;
 
         }
     });
+  }
+
+  function limpar()
+  {
+    $('#txtProduto').val('');
+    $('#txtPreco').val('');
+    $('#txtCat').val(0);
+    $('#txtForn').val(0);
+    $('#txtQtd').val('');
+    $('#txtQtdM').val('');
+    $('#txtValidade').val('');
+    $('#txtCod').val('');
+    tinymce.get('txtdesc').setContent('');
+    $('#txtfoto').val();
+    $('#target').attr('src','../../imagens/sem-foto.jpg');
   }
 </script>
