@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 19-Ago-2024 às 13:42
+-- Tempo de geração: 26-Ago-2024 às 20:15
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 8.0.11
 
@@ -56,6 +56,14 @@ CREATE TABLE `categoria` (
   `categoria` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Extraindo dados da tabela `categoria`
+--
+
+INSERT INTO `categoria` (`id_categoria`, `categoria`) VALUES
+(1, 'Personalizado'),
+(2, 'Bebidas');
+
 -- --------------------------------------------------------
 
 --
@@ -76,9 +84,7 @@ CREATE TABLE `cliente` (
 
 INSERT INTO `cliente` (`id_cliente`, `nome`, `email`, `senha`, `status`) VALUES
 (1, 'Renan', 'renan.melo31@etec.sp.gov.br', '123', 1),
-(2, 'Felipe', 'felipe@gmail.com', '123', 1),
-(5, 'felipe moura', 'felpemoura@gmail.com', '123', 1),
-(6, 'Daniel', 'daniel@etec', '123', 1);
+(2, 'Felipe Moura', 'dfgdf@gdfgdfgd', '123', 1);
 
 -- --------------------------------------------------------
 
@@ -114,6 +120,14 @@ CREATE TABLE `fornecedor` (
   `cep` varchar(15) NOT NULL,
   `telefone` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `fornecedor`
+--
+
+INSERT INTO `fornecedor` (`id_fornecedor`, `fornecedor`, `cnpj`, `endereco`, `nro`, `cidade`, `uf`, `cep`, `telefone`) VALUES
+(1, 'Fabricação Propria', '11', '11', '11', '11', '11', '11', '11'),
+(2, 'Coca Cola', '11', '11', '11', '11', '11', '11', '11');
 
 -- --------------------------------------------------------
 
@@ -183,14 +197,9 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id_produto`, `nome`, `preco`, `categoria`, `data_validade`, `quantidade`, `quantidade_min`, `descricao`, `fornecedor`, `foto`) VALUES
-(1, 'Dounts de Morango', '50.00', 1, '2024-08-16', 50, 1, 'teste', 2, 'sem-foto.jpg'),
-(2, 'Café', '90.00', 3, '2024-08-15', 10, 1, 'dfgdfgd', 1, 'sem-foto.jpg'),
-(3, 'Dounts de Chocolate', '49.80', 1, '2024-08-16', 50, 1, 'fdgdfgd', 2, 'sem-foto.jpg'),
-(4, 'Dounts de Morango com farelo', '80.00', 1, '2024-08-16', 2, 1, 'teste', 3, 'sem-foto.jpg'),
-(5, 'Dounts de Morango', '90.00', 1, '2024-08-16', 8, 10, 'dfgdfgd', 1, 'sem-foto.jpg'),
-(6, 'Dounts de Baunilha', '50.00', 1, '2024-08-16', 50, 1, 'teste', 1, 'sem-foto.jpg'),
-(7, 'Donuts', '12.00', 1, '2024-08-14', 10, 1, 'asdfasdf', 2, 'sem-foto.jpg'),
-(8, 'Donut de Flocos', '80.00', 1, '2024-08-19', 20, 1, 'asdasda', 3, 'sem-foto.jpg');
+(1, 'Dounts de Morango', '50.00', 1, '2024-08-23', 10, 1, '', 1, '22-08-2024-16-24-21-EADTEC.png'),
+(2, 'Dounts de Chocolate', '50.00', 1, '2024-08-22', 10, 1, '', 1, 'sem-foto.jpg'),
+(4, 'Colca-Cola Lata', '9.80', 2, '2024-08-30', 100, 1, '', 2, 'sem-foto.jpg');
 
 --
 -- Índices para tabelas despejadas
@@ -264,13 +273,13 @@ ALTER TABLE `administrador`
 -- AUTO_INCREMENT de tabela `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `endereco`
@@ -282,7 +291,7 @@ ALTER TABLE `endereco`
 -- AUTO_INCREMENT de tabela `fornecedor`
 --
 ALTER TABLE `fornecedor`
-  MODIFY `id_fornecedor` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_fornecedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `imagens`
@@ -306,7 +315,7 @@ ALTER TABLE `pedidos`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
