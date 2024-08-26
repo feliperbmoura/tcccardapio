@@ -19,6 +19,8 @@ if(empty($pag)){
     <h1>Bem-vindo</h1>
     <a href="index.php">Dashboard</a>
     <a href="index.php?pag=cardapio">Cardápio</a>
+    <a href="index.php?pag=categoria">Categoria</a>
+    <a href="index.php?pag=fornecedor">Fornecedor</a>
 
     <?php 
     require_once('pag/'.$pag)

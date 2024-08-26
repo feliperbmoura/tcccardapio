@@ -1,3 +1,6 @@
+<?php
+require_once('../../conexao.php');
+?>
 <div class="row">
     <div class="col-12">
         <button class="btn btn-success" onclick="inserir()">Inserir</button>
@@ -33,19 +36,43 @@
                 <div class="col-6">
                     <label for="exampleFormControlInput1" class="form-label">Categoria</label>
                     <select class="form-select" aria-label="Default select example" id="txtCat" name="txtCat">
-                        <option selected value="0">Selecione a categoria</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <option selected value="0">Selecione a categoria</option>
+                        <?php
+                            $query = $pdo->query("SELECT * FROM categoria  ORDER BY categoria ASC");
+                            $res = $query->fetchAll(PDO::FETCH_ASSOC);
+                            $total = @count($res);
+
+                            if($total > 0){
+                                for($i=0; $i<$total;$i++){
+                                    $id = $res[$i]['id_categoria'];
+                                    $categoria=$res[$i]['categoria'];
+                                    echo "<option value='{$id}'>{$categoria}</option>";
+                                }
+                            }else{
+                                echo "<option value='0'>Nenhuma Categoria Cadastrada</option>";
+                            }
+                        ?>
                     </select>
                 </div>
                 <div class="col-6">
                     <label for="exampleFormControlInput1" class="form-label">Fornecedor</label>
                     <select class="form-select" aria-label="Default select example" id="txtForn" name="txtForn">
-                        <option selected value="0">Selecione o Fornecedor</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <option selected value="0">Selecione o fornecedor</option>
+                        <?php
+                            $query = $pdo->query("SELECT * FROM fornecedor  ORDER BY fornecedor ASC");
+                            $res = $query->fetchAll(PDO::FETCH_ASSOC);
+                            $total = @count($res);
+
+                            if($total > 0){
+                                for($i=0; $i<$total;$i++){
+                                    $id = $res[$i]['id_fornecedor'];
+                                    $fornecedor=$res[$i]['fornecedor'];
+                                    echo "<option value='{$id}'>{$fornecedor}</option>";
+                                }
+                            }else{
+                                echo "<option value='0'>Nenhum fornecedor Cadastrado</option>";
+                            }
+                        ?>
                     </select>
                 </div>
             </div>

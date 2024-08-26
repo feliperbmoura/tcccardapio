@@ -11,7 +11,7 @@ if(@$_POST['pagina'] == ""){
 $pagina = intval(@$_POST['pagina']);
 $limite = $pagina * 10;
 
-$query = $pdo->query("SELECT * FROM produtos  ORDER BY nome ASC LIMIT $limite,10");
+$query = $pdo->query("SELECT P.*,C.categoria, F.fornecedor FROM produtos P INNER JOIN categoria C ON P.categoria=C.id_categoria INNER JOIN fornecedor F ON P.fornecedor=F.id_fornecedor ORDER BY nome ASC LIMIT $limite,10");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $total = @count($res);
 
