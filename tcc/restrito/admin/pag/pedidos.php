@@ -1,12 +1,6 @@
 <?php
 require_once('../../conexao.php');
 ?>
-<div class="row">
-    <div class="col-12">
-        <button class="btn btn-success" onclick="inserir()">Inserir</button>
-    </div>
-</div>
-
 <div class="row" id="listar">
     
 </div>
@@ -95,8 +89,8 @@ require_once('../../conexao.php');
             <div class="row">
                 <div class="col-12">
                     <label for="exampleFormControlInput1" class="form-label">Descrição</label>
-                    <textarea class="tinymce" data-tinymce="data-tinymce" name="txtdesc" id="txtdesc"></textarea>
-                    <!-- <textarea id="txtdesc" name="txtdesc"></textarea> -->
+                    <!-- <textarea class="tinymce" data-tinymce="data-tinymce" name="txtdesc" id="txtdesc"></textarea> -->
+                    <textarea id="txtdesc" name="txtdesc"></textarea>
                 </div>
             </div>
             <div class="row">

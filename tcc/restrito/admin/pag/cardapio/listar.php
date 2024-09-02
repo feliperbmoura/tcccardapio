@@ -11,7 +11,7 @@ if(@$_POST['pagina'] == ""){
 $pagina = intval(@$_POST['pagina']);
 $limite = $pagina * 10;
 
-$query = $pdo->query("SELECT P.*,C.categoria, F.fornecedor FROM produtos P INNER JOIN categoria C ON P.categoria=C.id_categoria INNER JOIN fornecedor F ON P.fornecedor=F.id_fornecedor ORDER BY nome ASC LIMIT $limite,10");
+$query = $pdo->query("SELECT P.*,C.categoria, F.fornecedor, F.id_fornecedor, C.id_categoria FROM produtos P INNER JOIN categoria C ON P.categoria=C.id_categoria INNER JOIN fornecedor F ON P.fornecedor=F.id_fornecedor ORDER BY nome ASC LIMIT $limite,10");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $total = @count($res);
 
@@ -43,6 +43,8 @@ if($total > 0){
       $validade = $res[$i]['data_validade'];
       $desc = $res[$i]['descricao'];
       $foto = $res[$i]['foto'];
+      $idforn = $res[$i]['id_fornecedor'];
+      $idcat = $res[$i]['id_categoria'];
 
     echo <<<HTML
 <tr>
@@ -52,7 +54,7 @@ if($total > 0){
 <td>{$forn}</td>
 <td>{$qtd}</td> 
 <td>{$cat}</td>   
-<td><button class="btn btn-warning" onclick="editar('{$codigo}','{$nome}','{$preco}','{$cat}','{$forn}','{$qtd}','{$qtdm}','{$validade}','{$desc}','{$foto}')">Editar</button>
+<td><button class="btn btn-warning" onclick="editar('{$codigo}','{$nome}','{$preco}','{$idcat}','{$idforn}','{$qtd}','{$qtdm}','{$validade}','{$desc}','{$foto}')">Editar</button>
 <button class="btn btn-danger" onclick="excluir('{$codigo}')">Excluir</button>
 </td>                          
 HTML;
@@ -67,6 +69,7 @@ HTML;
 <script type="text/javascript">
   function editar(codigo,nome,preco,categoria,fornecedor,qtd,qtdm,validade,descricao,foto){
     limpar();
+  
     $("#titulo").text("Editar Produto");
     $('#txtProduto').val(nome);
     $('#txtPreco').val(preco);

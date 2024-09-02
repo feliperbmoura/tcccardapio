@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26-Ago-2024 às 20:15
+-- Tempo de geração: 02-Set-2024 às 13:49
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 8.0.11
 
@@ -197,9 +197,7 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id_produto`, `nome`, `preco`, `categoria`, `data_validade`, `quantidade`, `quantidade_min`, `descricao`, `fornecedor`, `foto`) VALUES
-(1, 'Dounts de Morango', '50.00', 1, '2024-08-23', 10, 1, '', 1, '22-08-2024-16-24-21-EADTEC.png'),
-(2, 'Dounts de Chocolate', '50.00', 1, '2024-08-22', 10, 1, '', 1, 'sem-foto.jpg'),
-(4, 'Colca-Cola Lata', '9.80', 2, '2024-08-30', 100, 1, '', 2, 'sem-foto.jpg');
+(1, '123', '123.00', 2, '2024-09-26', 123, 123, '', 2, 'sem-foto.jpg');
 
 --
 -- Índices para tabelas despejadas
@@ -315,7 +313,7 @@ ALTER TABLE `pedidos`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

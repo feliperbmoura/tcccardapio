@@ -21,6 +21,7 @@ if(empty($pag)){
     <a href="index.php?pag=cardapio">Cardápio</a>
     <a href="index.php?pag=categoria">Categoria</a>
     <a href="index.php?pag=fornecedor">Fornecedor</a>
+    <a href="index.php?pag=pedidos">Pedidos</a>
 
     <?php 
     require_once('pag/'.$pag)

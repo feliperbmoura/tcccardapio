@@ -16,7 +16,8 @@ if($total >0){
         $foto = $res[$i]['foto'];
         $nome = $res[$i]['nome'];
         $des = $res[$i]['descricao'];
-        $preco = $res[$i]['preco']
+        $preco = $res[$i]['preco'];
+        $id = $res[$i]['id_produto'];
     ?>
 
     <div class="dish">
@@ -45,9 +46,9 @@ if($total >0){
 
         <div class="dish-price">
             <h4>R$<?=$preco?></h4>
-            <button class="btn-default">
+            <a class="btn btn-default" href="index.php?pag=carrinho&id=<?=$id?>">
                 <i class="fa-solid fa-basket-shopping"></i>
-            </button>
+            </a>
         </div>
     </div>
 
