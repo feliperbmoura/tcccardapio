@@ -25,7 +25,7 @@ if($total >0){
             <i class="fa-solid fa-heart"></i>
         </div>
 
-        <img src="imagens/Design_sem_nome__19_-removebg-preview.png" class="dish-image" alt="" style="height: 250px;">
+        <img src="imagens/<?=$foto?>" class="dish-image" alt="" style="height: 250px; width: 250px;">
 
         <h3 class="dish-title">
             <?=$nome?>

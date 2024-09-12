@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Set-2024 às 13:49
+-- Tempo de geração: 12-Set-2024 às 16:27
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 8.0.11
 
@@ -148,13 +148,24 @@ CREATE TABLE `imagens` (
 --
 
 CREATE TABLE `itens` (
-  `id_item` int(11) NOT NULL,
+  `id_itens` int(11) NOT NULL,
   `id_pedido` int(11) NOT NULL,
   `id_produto` int(11) NOT NULL,
   `valor_unitario` decimal(9,2) NOT NULL,
   `qtd` int(11) NOT NULL,
   `subtotal` decimal(9,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `itens`
+--
+
+INSERT INTO `itens` (`id_itens`, `id_pedido`, `id_produto`, `valor_unitario`, `qtd`, `subtotal`) VALUES
+(1, 1, 1, '123.00', 1, '123.00'),
+(2, 2, 1, '123.00', 1, '123.00'),
+(3, 3, 3, '8.00', 1, '8.00'),
+(4, 3, 1, '123.00', 1, '123.00'),
+(5, 3, 2, '5.00', 1, '5.00');
 
 -- --------------------------------------------------------
 
@@ -168,10 +179,19 @@ CREATE TABLE `pedidos` (
   `local` varchar(60) NOT NULL,
   `data` date NOT NULL,
   `hora` time NOT NULL,
-  `forma` varchar(30) NOT NULL,
-  `valor` decimal(9,2) NOT NULL,
+  `forma` varchar(60) NOT NULL,
+  `valor` varchar(60) NOT NULL,
   `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `pedidos`
+--
+
+INSERT INTO `pedidos` (`id_pedidos`, `id_cliente`, `local`, `data`, `hora`, `forma`, `valor`, `status`) VALUES
+(1, 1, 'Bar do Zé', '2024-09-12', '16:12:32', 'Dinheiro', '123.00', 1),
+(2, 1, 'Bar do Zé', '2024-09-12', '16:14:00', 'Dinheiro', '123.00', 1),
+(3, 1, 'Bar do Zé', '2024-09-12', '16:24:05', 'Dinheiro', '123.00', 1);
 
 -- --------------------------------------------------------
 
@@ -197,7 +217,9 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id_produto`, `nome`, `preco`, `categoria`, `data_validade`, `quantidade`, `quantidade_min`, `descricao`, `fornecedor`, `foto`) VALUES
-(1, '123', '123.00', 2, '2024-09-26', 123, 123, '', 2, 'sem-foto.jpg');
+(1, 'Dounts de Amendoin', '123.00', 2, '2024-09-26', 123, 123, '', 2, '12-09-2024-16-23-09-oi.png'),
+(2, 'Dounts de Morango', '5.00', 1, '2024-09-13', 100, 1, '<p>teste</p>', 1, '12-09-2024-16-15-58-pexels-igor-ovsyannykov-56123-205961.jpg'),
+(3, 'Dounts de Chocolate', '8.00', 1, '2024-09-13', 100, 1, '<p>teste</p>', 1, '12-09-2024-16-16-43-pexels-mccutcheon-1191639.jpg');
 
 --
 -- Índices para tabelas despejadas
@@ -243,7 +265,7 @@ ALTER TABLE `imagens`
 -- Índices para tabela `itens`
 --
 ALTER TABLE `itens`
-  ADD PRIMARY KEY (`id_item`);
+  ADD PRIMARY KEY (`id_itens`);
 
 --
 -- Índices para tabela `pedidos`
@@ -301,19 +323,19 @@ ALTER TABLE `imagens`
 -- AUTO_INCREMENT de tabela `itens`
 --
 ALTER TABLE `itens`
-  MODIFY `id_item` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_itens` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id_pedidos` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pedidos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

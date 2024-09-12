@@ -12,9 +12,6 @@ $validade=$_POST['txtValidade'];
 $descricao=$_POST['txtdesc'];
 $id = $_POST['txtCod'];
 
-echo $descricao;
-exit;
-
 //validar troca da foto
 $query = $pdo->query("SELECT * FROM produtos where id_produto = '$id'");
 $res = $query->fetchAll(PDO::FETCH_ASSOC);
