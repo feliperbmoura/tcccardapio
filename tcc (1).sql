@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 12-Set-2024 às 16:27
+-- Tempo de geração: 16-Set-2024 às 20:09
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 8.0.11
 
@@ -61,8 +61,7 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`id_categoria`, `categoria`) VALUES
-(1, 'Personalizado'),
-(2, 'Bebidas');
+(3, 'Donuts');
 
 -- --------------------------------------------------------
 
@@ -126,8 +125,7 @@ CREATE TABLE `fornecedor` (
 --
 
 INSERT INTO `fornecedor` (`id_fornecedor`, `fornecedor`, `cnpj`, `endereco`, `nro`, `cidade`, `uf`, `cep`, `telefone`) VALUES
-(1, 'Fabricação Propria', '11', '11', '11', '11', '11', '11', '11'),
-(2, 'Coca Cola', '11', '11', '11', '11', '11', '11', '11');
+(3, 'Dubah Donuts', '1', '1', '1', '1', '1', '1', '1');
 
 -- --------------------------------------------------------
 
@@ -165,7 +163,33 @@ INSERT INTO `itens` (`id_itens`, `id_pedido`, `id_produto`, `valor_unitario`, `q
 (2, 2, 1, '123.00', 1, '123.00'),
 (3, 3, 3, '8.00', 1, '8.00'),
 (4, 3, 1, '123.00', 1, '123.00'),
-(5, 3, 2, '5.00', 1, '5.00');
+(5, 3, 2, '5.00', 1, '5.00'),
+(6, 4, 3, '8.00', 1, '8.00'),
+(7, 4, 3, '8.00', 1, '8.00'),
+(8, 5, 2, '5.00', 1, '5.00'),
+(9, 6, 3, '8.00', 1, '8.00'),
+(10, 7, 3, '8.00', 1, '8.00'),
+(11, 8, 2, '5.00', 1, '5.00'),
+(12, 8, 2, '5.00', 1, '5.00'),
+(13, 9, 3, '8.00', 1, '8.00'),
+(14, 9, 3, '8.00', 1, '8.00'),
+(15, 9, 3, '8.00', 1, '8.00'),
+(16, 9, 3, '8.00', 1, '8.00'),
+(17, 9, 2, '5.00', 1, '5.00'),
+(18, 9, 3, '8.00', 1, '8.00'),
+(19, 9, 3, '8.00', 1, '8.00'),
+(20, 9, 3, '8.00', 1, '8.00'),
+(21, 9, 3, '8.00', 1, '8.00'),
+(22, 9, 3, '8.00', 1, '8.00'),
+(23, 9, 3, '8.00', 1, '8.00'),
+(24, 10, 2, '5.00', 1, '5.00'),
+(25, 11, 3, '8.00', 1, '8.00'),
+(26, 12, 1, '123.00', 1, '123.00'),
+(27, 13, 1, '123.00', 1, '123.00'),
+(28, 14, 1, '123.00', 1, '123.00'),
+(29, 14, 1, '123.00', 1, '123.00'),
+(30, 15, 5, '6.00', 1, '6.00'),
+(31, 16, 5, '6.00', 1, '6.00');
 
 -- --------------------------------------------------------
 
@@ -176,7 +200,6 @@ INSERT INTO `itens` (`id_itens`, `id_pedido`, `id_produto`, `valor_unitario`, `q
 CREATE TABLE `pedidos` (
   `id_pedidos` int(11) NOT NULL,
   `id_cliente` int(11) NOT NULL,
-  `local` varchar(60) NOT NULL,
   `data` date NOT NULL,
   `hora` time NOT NULL,
   `forma` varchar(60) NOT NULL,
@@ -188,10 +211,23 @@ CREATE TABLE `pedidos` (
 -- Extraindo dados da tabela `pedidos`
 --
 
-INSERT INTO `pedidos` (`id_pedidos`, `id_cliente`, `local`, `data`, `hora`, `forma`, `valor`, `status`) VALUES
-(1, 1, 'Bar do Zé', '2024-09-12', '16:12:32', 'Dinheiro', '123.00', 1),
-(2, 1, 'Bar do Zé', '2024-09-12', '16:14:00', 'Dinheiro', '123.00', 1),
-(3, 1, 'Bar do Zé', '2024-09-12', '16:24:05', 'Dinheiro', '123.00', 1);
+INSERT INTO `pedidos` (`id_pedidos`, `id_cliente`, `data`, `hora`, `forma`, `valor`, `status`) VALUES
+(1, 1, '2024-09-12', '16:12:32', 'Dinheiro', '123.00', 2),
+(2, 1, '2024-09-12', '16:14:00', 'Dinheiro', '123.00', 0),
+(3, 1, '2024-09-12', '16:24:05', 'Dinheiro', '123.00', 1),
+(4, 1, '2024-09-16', '12:42:36', 'Dinheiro', '123.00', 1),
+(5, 1, '2024-09-16', '12:52:13', 'Dinheiro', '123.00', 1),
+(6, 1, '2024-09-16', '13:16:00', 'Dinheiro', '123.00', 1),
+(7, 1, '2024-09-16', '13:17:18', 'Dinheiro', '123.00', 1),
+(8, 1, '2024-09-16', '13:20:50', 'PIX', '123.00', 1),
+(9, 1, '2024-09-16', '13:36:41', 'PIX', '123.00', 1),
+(10, 1, '2024-09-16', '13:37:40', 'PIX', '5', 1),
+(11, 1, '2024-09-16', '13:38:09', 'Credito', '8', 1),
+(12, 1, '2024-09-16', '13:40:56', 'Debito', '123', 1),
+(13, 1, '2024-09-16', '13:52:29', 'Credito', '123', 1),
+(14, 1, '2024-09-16', '15:24:21', 'Credito', '246', 1),
+(15, 1, '2024-09-16', '15:36:31', 'PIX', '6', 1),
+(16, 1, '2024-09-16', '15:39:31', 'Credito', '6', 1);
 
 -- --------------------------------------------------------
 
@@ -217,9 +253,11 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id_produto`, `nome`, `preco`, `categoria`, `data_validade`, `quantidade`, `quantidade_min`, `descricao`, `fornecedor`, `foto`) VALUES
-(1, 'Dounts de Amendoin', '123.00', 2, '2024-09-26', 123, 123, '', 2, '12-09-2024-16-23-09-oi.png'),
-(2, 'Dounts de Morango', '5.00', 1, '2024-09-13', 100, 1, '<p>teste</p>', 1, '12-09-2024-16-15-58-pexels-igor-ovsyannykov-56123-205961.jpg'),
-(3, 'Dounts de Chocolate', '8.00', 1, '2024-09-13', 100, 1, '<p>teste</p>', 1, '12-09-2024-16-16-43-pexels-mccutcheon-1191639.jpg');
+(5, 'Chocolate', '6.00', 3, '2024-09-18', 10, 1, '<p>Donuts Tradicional com a&ccedil;ucar refinado!</p>', 3, '16-09-2024-16-15-22-Design_sem_nome__18_-removebg-preview.pn'),
+(6, 'Tradicional', '6.00', 3, '2024-09-18', 10, 1, '<p>Inspirado no simpsons!</p>', 3, '16-09-2024-16-14-07-Design-sem-nome-(20).png'),
+(7, 'Simpsons', '6.00', 3, '2024-09-18', 10, 1, '<p>Donuts Pinkie Pie</p>', 3, '16-09-2024-16-14-03-Design-sem-nome-(20).png'),
+(8, 'Avelã', '8.00', 3, '2024-09-18', 10, 1, '<p>Donuts de Avel&atilde;</p>', 3, '16-09-2024-16-13-46-Design-sem-nome-(20).png'),
+(9, 'Pinkie Pie', '6.00', 3, '2024-09-18', 10, 1, '<p>Chocolate tradicional!</p>', 3, '16-09-2024-16-13-58-Design-sem-nome-(20).png');
 
 --
 -- Índices para tabelas despejadas
@@ -293,7 +331,7 @@ ALTER TABLE `administrador`
 -- AUTO_INCREMENT de tabela `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `cliente`
@@ -311,7 +349,7 @@ ALTER TABLE `endereco`
 -- AUTO_INCREMENT de tabela `fornecedor`
 --
 ALTER TABLE `fornecedor`
-  MODIFY `id_fornecedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_fornecedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `imagens`
@@ -323,19 +361,19 @@ ALTER TABLE `imagens`
 -- AUTO_INCREMENT de tabela `itens`
 --
 ALTER TABLE `itens`
-  MODIFY `id_itens` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_itens` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT de tabela `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id_pedidos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_pedidos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
