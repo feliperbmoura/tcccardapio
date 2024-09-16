@@ -4,7 +4,8 @@ session_start();
 if (isset($_SESSION['usuario'])) {
     if (isset($_SESSION['carrinho'])) {
        foreach($_SESSION['carrinho'] as $c){
-           $sub = $sub+$c['preco'];
+           $sub = $sub+$c['preco']; 
+          
         ?>
         <div class="row">
             <div class="col-8">
@@ -20,9 +21,11 @@ if (isset($_SESSION['usuario'])) {
         
         <?php 
        }
+       
        ?>
        Subtototal: <?=$sub?>
-       <button onclick="Finalizar()">Finalizar</button>
+
+       <a href="index.php?pag=pagamento">Pagamento</button>
        <button onclick="cancelar()">Cancelar</button>
        <?php
     } else {
@@ -56,17 +59,13 @@ if (isset($_SESSION['usuario'])) {
     }
 
     function cancelar(){
-        alert('Cancelar')
-    }
-
-    function Finalizar(){
         $.ajax({
-            url: "paginas/pedidos/cadastrar.php",
+            url: "paginas/pedidos/cancelar.php",
             type: 'POST',
 
             success: function (mensagem) {
                 if (mensagem.trim() == "salvo com sucesso") {
-                    window.location.assign("http://pt.stackoverflow.com");
+                    window.location.assign("index.php?pag=menu");
                 } else {
                     alert(mensagem);
             }
@@ -78,4 +77,5 @@ if (isset($_SESSION['usuario'])) {
 
         });
     }
+
 </script>

@@ -1,7 +1,5 @@
 <?php
 
-
-
 session_start();
 
 require_once("../../conexao.php");
@@ -16,8 +14,12 @@ require_once("../../conexao.php");
         $pedido = $res['0']['id_pedidos']+1;
     }
 
+    $forma= $_POST['fav_language'];
+
     $data = date('Y-m-d');
     $hora = date('H:i:s');
+    
+    $sub = 0;
 
     foreach($_SESSION['carrinho'] as $c){
         $query = $pdo->prepare("INSERT INTO itens(id_pedido, id_produto, valor_unitario, qtd, subtotal) VALUES (:id_pedido,:id_produto,:valor_unitario,1,:subtotal)");
@@ -25,17 +27,18 @@ require_once("../../conexao.php");
         $query->bindValue(":id_produto",$c['id']);
         $query->bindValue(":valor_unitario",$c['preco']);
         $query->bindValue(":subtotal",$c['preco']);
+
+        $sub = $sub+$c['preco'];
         $query->execute();
     }
 
-    $query = $pdo->prepare("INSERT INTO pedidos(id_pedidos,id_cliente, local, data, hora, forma, valor, status) VALUES (:pedido,:id_cliente,:local,:data,:hora,:forma,:valor,:status)");
+    $query = $pdo->prepare("INSERT INTO pedidos(id_pedidos,id_cliente, data, hora, forma, valor, status) VALUES (:pedido,:id_cliente,:data,:hora,:forma,:valor,:status)");
     $query->bindValue(":pedido",$pedido);
     $query->bindValue(":id_cliente",$_SESSION['usuario']['cod']);
-    $query->bindValue(":local",'Bar do Zé');
     $query->bindValue(":data",$data);
     $query->bindValue(":hora",$hora);
-    $query->bindValue(":forma",'Dinheiro');
-    $query->bindValue(":valor",'123.00');
+    $query->bindValue(":forma",$forma);
+    $query->bindValue(":valor",$sub);
     $query->bindValue(":status",'1');
     $query->execute();
 
