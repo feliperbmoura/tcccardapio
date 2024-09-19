@@ -54,6 +54,13 @@ if($total > 0){
 <td>{$valor}</td> 
 <td>{$status_extenso}</td>
 <td>
+HTML;
+      if($status !=0)
+  echo <<<HTML
+  <button class="btn btn-warning" onclick="atualizar('{$codigo}','{$status}')">Atualizar Pedido</button>
+HTML;
+echo <<<HTML
+  <button class="btn btn-danger" onclick="ver('{$codigo}')">Ver Itens</button>
 </td>                          
 HTML;
   }
@@ -64,6 +71,54 @@ HTML;
 HTML;
 }
 ?>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript">
-  
+  function atualizar(codigo,status){
+    if(status == 1){
+      var pedido = "Aguardando cliente";
+    }else{
+      var pedido = "Finalizado";
+    }
+      Swal.fire({
+          title: "Deseja realmente atualizar o status para "+pedido,
+          showDenyButton: true,
+          showCancelButton: false,
+          confirmButtonText: "Sim",
+          denyButtonText: `Não`
+        }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          $.ajax({
+            url: 'pag/pedidos/atualizar.php',
+            method: 'POST',
+            data: {codigo,status},
+            dataType: "html",
+            success: function (mensagem) {
+                      if (mensagem.trim() == "salvo com sucesso") {
+                        Swal.fire("Pedido atualizado com sucesso!", "", "success");
+                        listarpedido();
+                      } else {
+                          alert(mensagem);
+                  }
+
+
+              }
+          });
+        }
+      });
+  }
+
+  function ver(pedido){
+    $.ajax({
+            url: 'pag/pedidos/itens.php',
+            method: 'POST',
+            data: {pedido},
+            dataType: "html",
+            success: function(result){
+              console.log(result);
+                $("#listaritens").html(result);
+                $("#modalitens").modal('show');
+            }
+        });
+  }
 </script>
