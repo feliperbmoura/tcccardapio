@@ -9,6 +9,7 @@ if($status == 1){
     $query = $pdo->prepare("UPDATE pedidos SET status=2 WHERE id_pedidos = $id");
 
     $query->execute();
+
 }else{
     $query = $pdo->prepare("UPDATE pedidos SET status=0 WHERE id_pedidos = $id");
 

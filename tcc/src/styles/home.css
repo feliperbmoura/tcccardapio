@@ -16,6 +16,10 @@
     color: rgb(255, 255, 255);
 }
 
+#cta p{
+    text-align: justify;
+}
+
 #cta .title span{
     color: #e9a209;
 }
@@ -57,7 +61,7 @@
 
 div#banner img {
     margin-top: 65px;
-    height: 600px;
+    height: 500px;
 }
 
 @media screen and (max-width: 1170px) {
@@ -76,7 +80,6 @@ div#banner img {
         width: 100%;
         text-align: center;
         align-items: center;
-
     }
 }
 

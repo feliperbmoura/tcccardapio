@@ -5,26 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../src/styles/loginadm.css">
   </head>
   <body>
+
   <form id="formlogin">
-            <div class="row text-center">
-                <div class="col-12">
-                    <h2>Faça seu login</h2>
-                </div>
-                <div class="col-3">
+
+            <div id="login-fundo">
+
+             <h2>Faça seu login</h2>
+
+                <div id="email">
                     <label for="txtLogin" class="form-label">Digite seu email</label>
                     <input type="email" class="form-control" id="txtLogin" name="txtLogin"
-                           placeholder="name@example.com">
+                    placeholder="name@example.com">
                 </div>
-                <div class="col-3">
+
+                <div id="senha">
                     <label for="txtSenha" class="form-label">Digite sua senha</label>
                     <input type="password" class="form-control" id="txtSenha" name="txtSenha" placeholder="123">
                 </div>
+
+                <button type="submit" class="btn btn-primary">Acessar</button>
+
             </div>
-            <button type="submit" class="btn btn-primary">Acessar</button>
+
+            
         
-        </form>
+        </form> 
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
