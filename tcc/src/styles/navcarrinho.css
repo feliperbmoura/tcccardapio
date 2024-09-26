@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.navcarrinho{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.menus-carrinho{
+    color: white;
+    text-decoration: none;
+    background-color: #ffcb45;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.navcarrinho{
+    margin-bottom: 40vh;
+}
+
+
+@media screen and (max-width: 600px) {
+    .navcarrinho{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        width: 60%;
+        margin: auto;
+        margin-bottom: 18vh;
+    }
+}

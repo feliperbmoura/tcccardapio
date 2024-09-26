@@ -1,6 +1,5 @@
 <?php
 $sub = 0;
-session_start();
 if (isset($_SESSION['usuario'])) {
     if (isset($_SESSION['carrinho'])) {
        foreach($_SESSION['carrinho'] as $c){

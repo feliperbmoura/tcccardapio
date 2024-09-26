@@ -10,12 +10,15 @@
 </head>
 <body>
 <?php
-session_start();
 if (isset($_SESSION['usuario'])) {
-    echo $_SESSION['usuario']['nome'];
-   ?>
-   <a href='sair.php'>Sair</a>
-   <?php
+       $pagina = @$_GET['pagina'];
+
+       if(empty($pagina)){
+           $pagina = 'home.php';
+       }else{
+           $pagina = $pagina.'.php';
+       }
+           require_once('paginas/usuarios/'.$pagina);
 } else {
     ?>
     <main id="content">

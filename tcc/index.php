@@ -1,4 +1,5 @@
 <?php 
+session_start();
 $pag = @$_GET['pag'];
 
 if(empty($pag)){
@@ -21,6 +22,7 @@ if(empty($pag)){
     <link rel="stylesheet" href="src/styles/testimonials.css">
     <link rel="stylesheet" href="src/styles/footer.css">
     
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -38,11 +40,20 @@ if(empty($pag)){
                 <li class="nav-item"><a href="index.php#menu">Cardapio</a></li>
 
                 <li class="nav-item"><a href="index.php?#testimonials">Avaliações</a></li>
-
+                <?php 
+                if (isset($_SESSION['usuario'])) {
+                    echo 'Bem-vindo: ' .$_SESSION['usuario']['nome'];
+                
+                ?>
+                <a href='sair.php'>Sair</a>
+                <?php
+                }else{
+                    echo 'Bem-vindo: Visitante';
+                }
+                ?>
             </ul>
 
-            <a class="btn btn-default" href="index.php?pag=login">
-                Peça aqui
+            <a class="btn btn-default" href="index.php?pag=login"> <i class="fa-solid fa-basket-shopping"></i>
             </a>
             
             <button id="mobile-btn">
