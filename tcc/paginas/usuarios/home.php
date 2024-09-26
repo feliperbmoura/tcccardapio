@@ -9,10 +9,11 @@
 </head>
 <body>
         <nav class="navcarrinho">
-            <a  class="menus-carrinho"href="index.php?pag=login&pagina=pedidos">Meus Pedidos</a>
-            <a  class="menus-carrinho"href="index.php?pag=carrinho">Carrinho</a>
-            <a  class="menus-carrinho"href="index.php?pag=login&pagina=dados">Meus Dados</a>
-            <a  class="menus-carrinho"href="index.php?pag=login&pagina=pedidos">Meus Pedidos</a>
+            <a class="menus-carrinho"href="index.php?pag=login&pagina=pedidos">Meus Pedidos</a>
+            <a class="menus-carrinho"href="index.php?pag=carrinho">Carrinho</a>
+            <a class="menus-carrinho"href="index.php?pag=login&pagina=dados">Meus Dados</a>
+            <a class="menus-carrinho"href="index.php?pag=login&pagina=pedidos">Meus Pedidos</a>
+            <a class="menus-carrinho"href="index.php?pag=login&pagina=feedback">Feedback</a>
         </nav>
 </body>
 </html>
