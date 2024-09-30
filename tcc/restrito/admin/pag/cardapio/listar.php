@@ -17,7 +17,7 @@ $total = @count($res);
 
 if($total > 0){
   echo <<<HTML
-  <table class='table'>
+  <table class='table-striped table'>
     <thead>
       <tr>
         <th scope='col'>Código</th>
