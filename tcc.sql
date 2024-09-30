@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16-Set-2024 às 20:09
+-- Tempo de geração: 30-Set-2024 às 13:49
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 8.0.11
 
@@ -61,7 +61,8 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`id_categoria`, `categoria`) VALUES
-(3, 'Donuts');
+(3, 'Donuts'),
+(4, 'Bebidas');
 
 -- --------------------------------------------------------
 
@@ -82,8 +83,10 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`id_cliente`, `nome`, `email`, `senha`, `status`) VALUES
-(1, 'Renan', 'renan.melo31@etec.sp.gov.br', '123', 1),
-(2, 'Felipe Moura', 'dfgdf@gdfgdfgd', '123', 1);
+(1, 'Renan Mello', 'renan.melo31@etec.sp.gov.br', '123', 1),
+(2, 'Felipe Moura', 'dfgdf@gdfgdfgd', '123', 1),
+(3, 'felipe', 'felipemoura100k@gmail.com', '123', 1),
+(4, 'Papagaio', 'papagaio@gmail.com', '123', 1);
 
 -- --------------------------------------------------------
 
@@ -159,37 +162,12 @@ CREATE TABLE `itens` (
 --
 
 INSERT INTO `itens` (`id_itens`, `id_pedido`, `id_produto`, `valor_unitario`, `qtd`, `subtotal`) VALUES
-(1, 1, 1, '123.00', 1, '123.00'),
-(2, 2, 1, '123.00', 1, '123.00'),
-(3, 3, 3, '8.00', 1, '8.00'),
-(4, 3, 1, '123.00', 1, '123.00'),
-(5, 3, 2, '5.00', 1, '5.00'),
-(6, 4, 3, '8.00', 1, '8.00'),
-(7, 4, 3, '8.00', 1, '8.00'),
-(8, 5, 2, '5.00', 1, '5.00'),
-(9, 6, 3, '8.00', 1, '8.00'),
-(10, 7, 3, '8.00', 1, '8.00'),
-(11, 8, 2, '5.00', 1, '5.00'),
-(12, 8, 2, '5.00', 1, '5.00'),
-(13, 9, 3, '8.00', 1, '8.00'),
-(14, 9, 3, '8.00', 1, '8.00'),
-(15, 9, 3, '8.00', 1, '8.00'),
-(16, 9, 3, '8.00', 1, '8.00'),
-(17, 9, 2, '5.00', 1, '5.00'),
-(18, 9, 3, '8.00', 1, '8.00'),
-(19, 9, 3, '8.00', 1, '8.00'),
-(20, 9, 3, '8.00', 1, '8.00'),
-(21, 9, 3, '8.00', 1, '8.00'),
-(22, 9, 3, '8.00', 1, '8.00'),
-(23, 9, 3, '8.00', 1, '8.00'),
-(24, 10, 2, '5.00', 1, '5.00'),
-(25, 11, 3, '8.00', 1, '8.00'),
-(26, 12, 1, '123.00', 1, '123.00'),
-(27, 13, 1, '123.00', 1, '123.00'),
-(28, 14, 1, '123.00', 1, '123.00'),
-(29, 14, 1, '123.00', 1, '123.00'),
-(30, 15, 5, '6.00', 1, '6.00'),
-(31, 16, 5, '6.00', 1, '6.00');
+(1, 1, 8, '8.00', 1, '8.00'),
+(2, 1, 6, '6.00', 1, '6.00'),
+(3, 2, 5, '6.00', 1, '6.00'),
+(4, 3, 8, '8.00', 1, '8.00'),
+(5, 3, 7, '6.00', 1, '6.00'),
+(6, 4, 5, '6.00', 1, '6.00');
 
 -- --------------------------------------------------------
 
@@ -212,22 +190,10 @@ CREATE TABLE `pedidos` (
 --
 
 INSERT INTO `pedidos` (`id_pedidos`, `id_cliente`, `data`, `hora`, `forma`, `valor`, `status`) VALUES
-(1, 1, '2024-09-12', '16:12:32', 'Dinheiro', '123.00', 2),
-(2, 1, '2024-09-12', '16:14:00', 'Dinheiro', '123.00', 0),
-(3, 1, '2024-09-12', '16:24:05', 'Dinheiro', '123.00', 1),
-(4, 1, '2024-09-16', '12:42:36', 'Dinheiro', '123.00', 1),
-(5, 1, '2024-09-16', '12:52:13', 'Dinheiro', '123.00', 1),
-(6, 1, '2024-09-16', '13:16:00', 'Dinheiro', '123.00', 1),
-(7, 1, '2024-09-16', '13:17:18', 'Dinheiro', '123.00', 1),
-(8, 1, '2024-09-16', '13:20:50', 'PIX', '123.00', 1),
-(9, 1, '2024-09-16', '13:36:41', 'PIX', '123.00', 1),
-(10, 1, '2024-09-16', '13:37:40', 'PIX', '5', 1),
-(11, 1, '2024-09-16', '13:38:09', 'Credito', '8', 1),
-(12, 1, '2024-09-16', '13:40:56', 'Debito', '123', 1),
-(13, 1, '2024-09-16', '13:52:29', 'Credito', '123', 1),
-(14, 1, '2024-09-16', '15:24:21', 'Credito', '246', 1),
-(15, 1, '2024-09-16', '15:36:31', 'PIX', '6', 1),
-(16, 1, '2024-09-16', '15:39:31', 'Credito', '6', 1);
+(1, 4, '2024-09-23', '13:22:25', 'Credito', '14', 0),
+(2, 1, '2024-09-23', '13:23:07', 'PIX', '6', 2),
+(3, 3, '2024-09-23', '13:24:32', 'Debito', '14', 1),
+(4, 4, '2024-09-23', '13:44:40', 'Credito', '6', 1);
 
 -- --------------------------------------------------------
 
@@ -253,11 +219,16 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id_produto`, `nome`, `preco`, `categoria`, `data_validade`, `quantidade`, `quantidade_min`, `descricao`, `fornecedor`, `foto`) VALUES
-(5, 'Chocolate', '6.00', 3, '2024-09-18', 10, 1, '<p>Donuts Tradicional com a&ccedil;ucar refinado!</p>', 3, '16-09-2024-16-15-22-Design_sem_nome__18_-removebg-preview.pn'),
-(6, 'Tradicional', '6.00', 3, '2024-09-18', 10, 1, '<p>Inspirado no simpsons!</p>', 3, '16-09-2024-16-14-07-Design-sem-nome-(20).png'),
-(7, 'Simpsons', '6.00', 3, '2024-09-18', 10, 1, '<p>Donuts Pinkie Pie</p>', 3, '16-09-2024-16-14-03-Design-sem-nome-(20).png'),
-(8, 'Avelã', '8.00', 3, '2024-09-18', 10, 1, '<p>Donuts de Avel&atilde;</p>', 3, '16-09-2024-16-13-46-Design-sem-nome-(20).png'),
-(9, 'Pinkie Pie', '6.00', 3, '2024-09-18', 10, 1, '<p>Chocolate tradicional!</p>', 3, '16-09-2024-16-13-58-Design-sem-nome-(20).png');
+(5, 'Chocolate', '6.00', 3, '2024-09-18', 10, 1, '', 3, '19-09-2024-15-33-33-06.png'),
+(6, 'Tradicional', '6.00', 3, '2024-09-18', 10, 1, '<p>Donuts Pinkie Pie</p>', 3, '19-09-2024-15-34-13-01.png'),
+(7, 'Simpsons', '6.00', 3, '2024-09-18', 10, 1, '<p>Chocolate tradicional!</p>', 3, '19-09-2024-15-34-01-10.png'),
+(8, 'Avelã', '8.00', 3, '2024-09-18', 10, 1, '', 3, '19-09-2024-15-33-17-02.png'),
+(9, 'Pinkie Pie', '6.00', 3, '2024-09-18', 10, 1, '', 3, '19-09-2024-15-33-49-05.png'),
+(11, 'Teste O', '5.00', 3, '2024-09-25', 10, 1, '', 3, 'sem-foto.jpg'),
+(12, '23', '1.00', 4, '2024-09-14', 1, 1, '', 3, 'sem-foto.jpg'),
+(13, '1', '1.00', 3, '2024-10-09', 1, 1, '', 3, 'sem-foto.jpg'),
+(14, '123', '123.00', 3, '2024-09-12', 1, 1, '', 3, 'sem-foto.jpg'),
+(15, '1', '1.00', 4, '2024-09-13', 1, 1, '', 3, 'sem-foto.jpg');
 
 --
 -- Índices para tabelas despejadas
@@ -331,13 +302,13 @@ ALTER TABLE `administrador`
 -- AUTO_INCREMENT de tabela `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `endereco`
@@ -361,19 +332,19 @@ ALTER TABLE `imagens`
 -- AUTO_INCREMENT de tabela `itens`
 --
 ALTER TABLE `itens`
-  MODIFY `id_itens` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id_itens` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id_pedidos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_pedidos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
