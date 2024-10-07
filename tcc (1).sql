@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Set-2024 às 13:49
+-- Tempo de geração: 07-Out-2024 às 20:25
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 8.0.11
 
@@ -167,7 +167,8 @@ INSERT INTO `itens` (`id_itens`, `id_pedido`, `id_produto`, `valor_unitario`, `q
 (3, 2, 5, '6.00', 1, '6.00'),
 (4, 3, 8, '8.00', 1, '8.00'),
 (5, 3, 7, '6.00', 1, '6.00'),
-(6, 4, 5, '6.00', 1, '6.00');
+(6, 4, 5, '6.00', 1, '6.00'),
+(7, 5, 8, '8.00', 1, '8.00');
 
 -- --------------------------------------------------------
 
@@ -191,9 +192,10 @@ CREATE TABLE `pedidos` (
 
 INSERT INTO `pedidos` (`id_pedidos`, `id_cliente`, `data`, `hora`, `forma`, `valor`, `status`) VALUES
 (1, 4, '2024-09-23', '13:22:25', 'Credito', '14', 0),
-(2, 1, '2024-09-23', '13:23:07', 'PIX', '6', 2),
-(3, 3, '2024-09-23', '13:24:32', 'Debito', '14', 1),
-(4, 4, '2024-09-23', '13:44:40', 'Credito', '6', 1);
+(2, 1, '2024-09-23', '13:23:07', 'PIX', '6', 0),
+(3, 3, '2024-09-23', '13:24:32', 'Debito', '14', 0),
+(4, 4, '2024-09-23', '13:44:40', 'Credito', '6', 0),
+(5, 4, '2024-09-30', '16:30:39', 'Debito', '8', 1);
 
 -- --------------------------------------------------------
 
@@ -223,12 +225,7 @@ INSERT INTO `produtos` (`id_produto`, `nome`, `preco`, `categoria`, `data_valida
 (6, 'Tradicional', '6.00', 3, '2024-09-18', 10, 1, '<p>Donuts Pinkie Pie</p>', 3, '19-09-2024-15-34-13-01.png'),
 (7, 'Simpsons', '6.00', 3, '2024-09-18', 10, 1, '<p>Chocolate tradicional!</p>', 3, '19-09-2024-15-34-01-10.png'),
 (8, 'Avelã', '8.00', 3, '2024-09-18', 10, 1, '', 3, '19-09-2024-15-33-17-02.png'),
-(9, 'Pinkie Pie', '6.00', 3, '2024-09-18', 10, 1, '', 3, '19-09-2024-15-33-49-05.png'),
-(11, 'Teste O', '5.00', 3, '2024-09-25', 10, 1, '', 3, 'sem-foto.jpg'),
-(12, '23', '1.00', 4, '2024-09-14', 1, 1, '', 3, 'sem-foto.jpg'),
-(13, '1', '1.00', 3, '2024-10-09', 1, 1, '', 3, 'sem-foto.jpg'),
-(14, '123', '123.00', 3, '2024-09-12', 1, 1, '', 3, 'sem-foto.jpg'),
-(15, '1', '1.00', 4, '2024-09-13', 1, 1, '', 3, 'sem-foto.jpg');
+(9, 'Pinkie Pie', '6.00', 3, '2024-09-18', 10, 1, '', 3, '19-09-2024-15-33-49-05.png');
 
 --
 -- Índices para tabelas despejadas
@@ -332,19 +329,19 @@ ALTER TABLE `imagens`
 -- AUTO_INCREMENT de tabela `itens`
 --
 ALTER TABLE `itens`
-  MODIFY `id_itens` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_itens` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id_pedidos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_pedidos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
