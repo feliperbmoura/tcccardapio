@@ -27,6 +27,7 @@ if(empty($pag)){
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Dubah Donuts</title>
+    
 </head>
 <body>
     <header>
@@ -42,13 +43,13 @@ if(empty($pag)){
                 <li class="nav-item"><a href="index.php?#testimonials">Avaliações</a></li>
                 <?php 
                 if (isset($_SESSION['usuario'])) {
-                    echo 'Bem-vindo: ' .$_SESSION['usuario']['nome'];
+                    echo "<div style='display: flex; align-items: center; gap: 10px; color: white; ' ><i class='fa-solid fa-user' style='background-color: #ffcb45;; border-radius: 50%; padding: 8px; color: black;'></i> Bem-vindo:" .$_SESSION['usuario']['nome']. "</div>";
                 
                 ?>
                 <a href='sair.php'>Sair</a>
                 <?php
                 }else{
-                    echo 'Bem-vindo: Visitante';
+                    echo "<div style='display: flex; align-items: center; gap: 10px; color: white; ' ><i class='fa-solid fa-user' style='background-color: #ffcb45;; border-radius: 50%; padding: 8px; color: black;'></i> Bem-vindo: Visitante</div>";
                 }
                 ?>
             </ul>
@@ -62,19 +63,23 @@ if(empty($pag)){
         </nav>
 
         <div id="mobile-menu">
+            
             <ul id="mobile-nav-list">
 
-                <li class="nav-item"><a href="index.php">Inicio</a></li>
+                <li class="nav-item"><a href="index.php" >Inicio</a></li>
 
                 <li class="nav-item"><a href="index.php#menu">Cardapio</a></li>
 
                 <li class="nav-item"><a href="index.php?#testimonials">Avaliações</a></li>
 
+                
             </ul>
 
             <a class="btn btn-default" href="index.php?pag=login">
                 Peça aqui
             </a>
+
+          
         </div>
     </header>
 

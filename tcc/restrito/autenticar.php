@@ -13,9 +13,9 @@ $res = $query->fetchAll(PDO::FETCH_ASSOC);
 $total = @count($res);
 
 if($total > 0){
-    $_SESSION['usuario']['cod'] = $res[0]['id_admin'];
-    $_SESSION['usuario']['nome'] = $res[0]['nome'];
-    $_SERVER['usuario']['nivel'] = $res[0]['nivel'];
+    $_SESSION['admin']['cod'] = $res[0]['id_admin'];
+    $_SESSION['admin']['nome'] = $res[0]['nome'];
+    $_SERVER['admin']['nivel'] = $res[0]['nivel'];
 
     echo "salvo com sucesso";
 }else{
