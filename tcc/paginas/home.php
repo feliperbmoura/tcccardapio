@@ -191,12 +191,27 @@
                 </h3>
 
                 <div id="feedbacks">
-                    <div class="feedback">
+                <?php
+
+require_once('conexao.php'); 
+$query = $pdo->prepare("SELECT F.*, C.nome FROM feedback F INNER JOIN cliente C ON F.id_cliente=C.id_cliente ORDER BY F.id_feedback DESC LIMIT 0,2");
+$query->execute();
+$res = $query->fetchAll(PDO::FETCH_ASSOC);
+$total = @count($res);
+
+for($i = 0; $i<=$total-1; $i++){
+
+    $cliente = $res[$i]['nome'];
+    $feedback = $res[$i]['feedback'];
+    
+   
+    ?>
+    <div class="feedback">
                         <img src="imagens/user.png" class="feedback-avatar" alt="">
 
                         <div class="feedback-content">
                             <p>
-                                Usuario 2
+                               <?=$cliente?>
                                 <span>
                                     <i class="fa-solid fa-star"></i>
                                     <i class="fa-solid fa-star"></i>
@@ -206,37 +221,18 @@
                                 </span>
                             </p>
                             <p>
-                                "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
+                                "<?=$feedback?>"
                             </p>
                         </div>
                     </div>
-
-                    <div class="feedback">
-                        <img src="imagens/user.png" class="feedback-avatar" alt="">
-
-                        <div class="feedback-content">
-                            <p>
-                                Usuario 1
-                                <span>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                    <i class="fa-solid fa-star"></i>
-                                </span>
-                            </p>
-                            <p>
-                                "Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                Repellat voluptatibus cumque dolor ea est quae alias necessitatibus"
-                            </p>
-                        </div>
-                    </div>
+    <?php
+}
+?>
                 </div>
 
-                <button class="btn-default">
+                <a href="index.php?pag=feedback" class="btn btn-default">
                     Ver mais avaliações
-                </button>
+                </a>
             </div>
         </section>
     </main>

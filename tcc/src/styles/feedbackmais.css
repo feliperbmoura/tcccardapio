@@ -1,0 +1,15 @@
+.feedback-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.nome{
+    display: flex;
+}
+
+.starsback{
+    display: flex;
+    gap: 3px
+
+    
+}
