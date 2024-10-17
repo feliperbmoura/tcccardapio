@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Out-2024 às 20:25
+-- Tempo de geração: 17-Out-2024 às 14:53
 -- Versão do servidor: 10.4.21-MariaDB
 -- versão do PHP: 8.0.11
 
@@ -104,6 +104,29 @@ CREATE TABLE `endereco` (
   `cidade` varchar(60) NOT NULL,
   `uf` varchar(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `id_feedback` int(11) NOT NULL,
+  `id_cliente` int(11) NOT NULL,
+  `feedback` text NOT NULL,
+  `data` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `feedback`
+--
+
+INSERT INTO `feedback` (`id_feedback`, `id_cliente`, `feedback`, `data`) VALUES
+(1, 1, 'sdfsdf', '2024-10-10 15:36:12'),
+(2, 1, 'ooii', '2024-10-10 10:38:07'),
+(3, 1, 'hjghjghjghj', '2024-10-10 10:39:05'),
+(4, 4, 'sdfsafas', '2024-10-10 10:58:48');
 
 -- --------------------------------------------------------
 
@@ -256,6 +279,12 @@ ALTER TABLE `endereco`
   ADD PRIMARY KEY (`id_endereco`);
 
 --
+-- Índices para tabela `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id_feedback`);
+
+--
 -- Índices para tabela `fornecedor`
 --
 ALTER TABLE `fornecedor`
@@ -312,6 +341,12 @@ ALTER TABLE `cliente`
 --
 ALTER TABLE `endereco`
   MODIFY `id_endereco` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id_feedback` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `fornecedor`
