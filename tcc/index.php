@@ -21,7 +21,7 @@ if(empty($pag)){
     <link rel="stylesheet" href="src/styles/menu.css">
     <link rel="stylesheet" href="src/styles/testimonials.css">
     <link rel="stylesheet" href="src/styles/footer.css">
-    <link rel="stylesheet" href="src/sytles/seuspedidos.css">
+    <link rel="stylesheet" href="src/styles/seuspedidos.css">
     <link rel="stylesheet" href="src/styles/feedbackmais.css">
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -44,10 +44,10 @@ if(empty($pag)){
                 <li class="nav-item"><a href="index.php?#testimonials">Avaliações</a></li>
                 <?php 
                 if (isset($_SESSION['usuario'])) {
-                    echo "<div style='display: flex; align-items: center; gap: 10px; color: white; ' ><i class='fa-solid fa-user' style='background-color: #ffcb45;; border-radius: 50%; padding: 8px; color: black;'></i> Bem-vindo:" .$_SESSION['usuario']['nome']. "</div>";
+                    echo "<div style='display: flex; align-items: center; gap: 10px; color: white; ' ><i class='fa-solid fa-user' style='background-color: #ffcb45;; border-radius: 50%; padding: 8px; color: black;'></i> Bem-vindo: " .$_SESSION['usuario']['nome']. "</div>";
                 
                 ?>
-                <a href='sair.php'>Sair</a>
+                <a href='sair.php' style="color: white; text-decoration: none; align-itens: center; display: flex;">Sair</a>
                 <?php
                 }else{
                     echo "<div style='display: flex; align-items: center; gap: 10px; color: white; ' ><i class='fa-solid fa-user' style='background-color: #ffcb45;; border-radius: 50%; padding: 8px; color: black;'></i> Bem-vindo: Visitante</div>";
@@ -55,7 +55,7 @@ if(empty($pag)){
                 ?>
             </ul>
 
-            <a class="btn btn-default" href="index.php?pag=login"> <i class="fa-solid fa-basket-shopping"></i>
+            <a class="btn btn-default" href="index.php?pag=login"> <i class="fa-solid fa-user"></i>
             </a>
             
             <button id="mobile-btn">

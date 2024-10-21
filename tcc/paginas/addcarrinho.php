@@ -3,12 +3,14 @@
     $id = $_GET['id'];
     $nome = $_GET['produto'];
     $preco = $_GET['preco'];
+    $foto = $_GET['imagem'];
 
     if(isset($_SESSION['carrinho'])){
         $dados = [
             'id' =>  $id,
             'nome' => $nome,
-            'preco' => $preco 
+            'preco' => $preco,
+            'foto' => $foto
         ];
 
         $_SESSION['carrinho'][] = $dados;
@@ -16,7 +18,8 @@
         $dados = [
             'id' =>  $id,
             'nome' => $nome,
-            'preco' => $preco 
+            'preco' => $preco,
+            'foto' => $foto
         ];
 
         $_SESSION['carrinho'][] =  $dados;    

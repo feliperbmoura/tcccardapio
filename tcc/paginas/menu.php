@@ -46,7 +46,7 @@ if($total >0){
 
         <div class="dish-price">
             <h4>R$<?=$preco?></h4>
-            <a class="btn btn-default" href="index.php?pag=addcarrinho&id=<?=$id?>&produto=<?=$nome?>&preco=<?=$preco?>">
+            <a class="btn btn-default" href="index.php?pag=addcarrinho&id=<?=$id?>&produto=<?=$nome?>&preco=<?=$preco?>&imagem=<?=$foto?>">
                 <i class="fa-solid fa-basket-shopping"></i>
             </a>
         </div>

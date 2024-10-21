@@ -50,5 +50,11 @@ $(document).ready(function(){
         duration: 1000,
         distance: '20%'
     })
+
+    ScrollReveal().reveal('#card-box', {
+        origin: 'bottom',
+        duration: 1000,
+        distance: '20%'
+    })
 });
 

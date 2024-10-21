@@ -1,3 +1,8 @@
+<h1 id="titulo">
+    Seus Pedidos
+</h1>
+
+<script src="../src/javascript/script.js"></script>
 <?php
 $sub = 0;
 if (isset($_SESSION['usuario'])) {
@@ -5,27 +10,34 @@ if (isset($_SESSION['usuario'])) {
        foreach($_SESSION['carrinho'] as $c){
            $sub = $sub+$c['preco']; 
           
-        ?>
-        <div class="row">
-            <div class="col-8">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title"><?=$c['nome']?></h5>
-                        <p class="card-text"><?=$c['preco']?></p>
-                        <a href="#" class="btn btn-primary" onclick="personalizar()">Personalizar</a>
+        ?>          
+                    <div id="card-box">
+                        <div id="carrinho-conteudo">
+                            <img src="imagens/<?=$c['foto']?>" class="dish-image" alt="" >
+                            <div id="descricao">
+
+                                <div id="valor">
+
+                                    <h5 class="card-title"><?=$c['nome']?></h5>
+                                    <p class="card-text">R$<?=$c['preco']?></p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <a href="#" class="btn-default" style="color: white; text-decoration: none; border-radius: 0; border-bottom-left-radius: 10px;" onclick="personalizar()">Personalizar</a>
                     </div>
-                </div>
-            </div>
-        </div>
         
         <?php 
        }
        
        ?>
-       Subtototal: <?=$sub?>
 
-       <a href="index.php?pag=pagamento">Pagamento</button>
+       <div id="pagamento">
+       <p> Total: R$<?=$sub?></p>
+       <a href="index.php?pag=pagamento">Pagamento</a>
        <button onclick="cancelar()">Cancelar</button>
+        </div>
+
        <?php
     } else {
         echo 'Ahhh! Seu carrinho está vazio, que tal fazer uma compra :)';
