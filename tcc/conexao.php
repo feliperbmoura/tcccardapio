@@ -1,7 +1,8 @@
 <?php
 $user = 'root';
+//$user = 'dbdubahdonuts';
 $password = '';
-$banco = 'tcc';
+$banco = 'dbdubahdonuts';
 $servidor = 'localhost';
 
 date_default_timezone_set('America/Sao_Paulo');

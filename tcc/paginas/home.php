@@ -54,7 +54,7 @@
                         <i class="fa-solid fa-heart"></i>
                     </div>
 
-                    <img src="imagens/Design_sem_nome__19_-removebg-preview.png" class="dish-image" alt="" style="height: 250px;">
+                    <img src="imagens/19-09-2024-15-33-17-02.png" class="dish-image" alt="" style="height: 250px;">
 
                     <h3 class="dish-title">
                         Stranberry Donuts
@@ -86,7 +86,7 @@
                         <i class="fa-solid fa-heart"></i>
                     </div>
 
-                    <img src="imagens/Design_sem_nome__22_-removebg-preview.png" class="dish-image" alt="" style="height: 250px;">
+                    <img src="imagens/19-09-2024-15-33-33-06.png" class="dish-image" alt="" style="height: 250px;">
 
                     <h3 class="dish-title">
                         Lorem Ipsum
@@ -118,7 +118,7 @@
                         <i class="fa-solid fa-heart"></i>
                     </div>
 
-                    <img src="imagens/Design sem nome (20).png" class="dish-image" alt="" style="height: 250px;">
+                    <img src="imagens/19-09-2024-15-33-49-05.png" class="dish-image" alt="" style="height: 250px;">
 
                     <h3 class="dish-title">
                         Lorem Ipsum
@@ -150,7 +150,7 @@
                         <i class="fa-solid fa-heart"></i>
                     </div>
 
-                    <img src="imagens/Design_sem_nome__21_-removebg-preview.png" class="dish-image" alt="" style="height: 250px;">
+                    <img src="imagens/19-09-2024-15-34-01-10.png" class="dish-image" alt="" style="height: 250px;">
 
                     <h3 class="dish-title">
                         Lorem Ipsum

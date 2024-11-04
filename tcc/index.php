@@ -39,23 +39,28 @@ if(empty($pag)){
 
                 <li class="nav-item active"><a href="index.php">Inicio</a></li>
 
-                <li class="nav-item"><a href="index.php#menu">Cardapio</a></li>
+                <li class="nav-item"><a href="index.php#menu">Mais vendidos</a></li>
 
                 <li class="nav-item"><a href="index.php?#testimonials">Avaliações</a></li>
+
                 <?php 
+
                 if (isset($_SESSION['usuario'])) {
                     echo "<div style='display: flex; align-items: center; gap: 10px; color: white; ' ><i class='fa-solid fa-user' style='background-color: #ffcb45;; border-radius: 50%; padding: 8px; color: black;'></i> Bem-vindo: " .$_SESSION['usuario']['nome']. "</div>";
                 
                 ?>
-                <a href='sair.php' style="color: white; text-decoration: none; align-itens: center; display: flex;">Sair</a>
+
+                <a href='sair.php' style="color: white; text-decoration: none; align-itens: center; display: flex;">  Sair <i class="fa-solid fa-arrow-right"></i></a>
                 <?php
+
                 }else{
                     echo "<div style='display: flex; align-items: center; gap: 10px; color: white; ' ><i class='fa-solid fa-user' style='background-color: #ffcb45;; border-radius: 50%; padding: 8px; color: black;'></i> Bem-vindo: Visitante</div>";
                 }
                 ?>
+
             </ul>
 
-            <a class="btn btn-default" href="index.php?pag=login"> <i class="fa-solid fa-user"></i>
+            <a class="btn btn-default" href="index.php?pag=login"> <i class="fa-solid fa-bars"></i>
             </a>
             
             <button id="mobile-btn">
@@ -73,12 +78,15 @@ if(empty($pag)){
 
                 <li class="nav-item"><a href="index.php?#testimonials">Avaliações</a></li>
 
-                
-            </ul>
+                <li class="nav-item"><a  href="index.php?pag=login">Menu</a></li>
 
-            <a class="btn btn-default" href="index.php?pag=login">
-                Peça aqui
-            </a>
+                <a href="index.php?pag=menu" class="btn btn-default">Ver cardápio</a>
+
+            </ul>
+                
+           
+
+            
 
           
         </div>

@@ -1,1 +1,2 @@
-Página de Dashboard
+
+<iframe title="relatorio-loja-brinquedos-29-10" width="100%" height="1000" src="https://app.powerbi.com/view?r=eyJrIjoiMjFjYWY0NDMtNWIyOS00NDhmLWJlZGQtODNkZjE2Njc1ZDdhIiwidCI6ImIxMDUxYzRiLTNiOTQtNDFhYi05NDQxLWU3M2E3MjM0MmZkZCJ9" frameborder="0" allowFullScreen="true"></iframe>

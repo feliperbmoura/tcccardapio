@@ -160,7 +160,8 @@ require_once('../../conexao.php');
     }
 
     $("#form").submit(function () {
-        
+        tinymce.activeEditor.setProgressState(true);
+        tinymce.triggerSave();
         event.preventDefault();
         var formData = new FormData(this);
 
@@ -172,6 +173,7 @@ require_once('../../conexao.php');
             success: function (mensagem) {
                 if (mensagem.trim() == "salvo com sucesso") {
                    listarcardapio();
+                tinymce.activeEditor.setProgressState(false);
                    $('#modalinserir').modal('hide');
                 } else {
                     alert(mensagem);

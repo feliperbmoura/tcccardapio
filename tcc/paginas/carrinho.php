@@ -26,21 +26,33 @@ if (isset($_SESSION['usuario'])) {
                         </div>
                         <a href="#" class="btn-default" style="color: white; text-decoration: none; border-radius: 0; border-bottom-left-radius: 10px;" onclick="personalizar()">Personalizar</a>
                     </div>
+                    
         
         <?php 
        }
-       
-       ?>
 
-       <div id="pagamento">
-       <p> Total: R$<?=$sub?></p>
-       <a href="index.php?pag=pagamento">Pagamento</a>
-       <button onclick="cancelar()">Cancelar</button>
+       ?>
+        <div id="add-mais">
+            <a href="index.php?pag=menu" id="">Adicionar mais   </a>
         </div>
+    <div id="pagamento">
+        <p> Total: R$<?=$sub?></p>
+
+        <div id="linha"></div>
+
+        <div id="pagar">
+            <a class="btn-default btn"href="index.php?pag=pagamento">Finalizar</a>
+            <button class=""onclick="cancelar()">Cancelar :(</button>
+        </div>
+    </div>
 
        <?php
     } else {
-        echo 'Ahhh! Seu carrinho está vazio, que tal fazer uma compra :)';
+        echo '
+    <h4 style="text-align: center;">Ahhh! parece que seu carrinho está vazio</h4>
+    <div id="add-mais">
+        <a href="index.php?pag=menu" id="">Adicionar</a>
+    </div>';
     }
 } else {
     header('Location: index.php?pag=login');

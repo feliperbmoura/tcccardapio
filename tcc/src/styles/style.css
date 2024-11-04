@@ -69,3 +69,13 @@ section{
     color: white;
     font-size: 2.1875rem;
 }
+
+
+#editar-login{
+    background-color: white;
+    width: 50%;
+    margin: auto;
+    margin-top: 60px;
+}
+
+#editar-login{}

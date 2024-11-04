@@ -2,32 +2,79 @@
     margin: 0;
     padding: 0;
 }
-.navcarrinho{
-    display: flex;
-    justify-content: space-evenly;
+
+h1{
+    width: 50%;
+    margin: auto;
+    margin-top: -80px;
+    color: white;
 }
 
+.navcarrinho{
+    width: 50%;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.171);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 51vh;
+    margin-top: 40px;
+    padding: 10px; 
+    gap: 30px;
+}
 .menus-carrinho{
     color: white;
     text-decoration: none;
-    background-color: #ffcb45;
-    padding: 10px;
-    border-radius: 10px;
-    text-align: center;
+    background-color: #562b2d;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
 }
 
-.navcarrinho{
-    margin-bottom: 40vh;
+.menus-carrinho:hover{
+    background-color: #562b2db6;
 }
 
+@media screen and (max-width: 830px){
+    h1{
+        width: 90%;
+        margin: auto;
+        margin-top: -80px;
+        margin-bottom: 20px;
+    }
 
-@media screen and (max-width: 600px) {
     .navcarrinho{
+        width: 90%;
+        margin: auto;
+        background-color: rgba(255, 255, 255, 0.171);
         display: flex;
         flex-direction: column;
+        height: 51vh;
+        margin-top: 30px;
+        padding: 10px;
         gap: 30px;
-        width: 60%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h1{
+        width: 90%;
         margin: auto;
-        margin-bottom: 18vh;
+        margin-top: -20px;
+    }
+
+    .navcarrinho{
+        width: 90%;
+        margin: auto;
+        background-color: rgba(255, 255, 255, 0.171);
+        display: flex;
+        flex-direction: column;
+        height: 51vh;
+        margin-top: 30px;
+        padding: 10px;
+        gap: 30px;
     }
 }
