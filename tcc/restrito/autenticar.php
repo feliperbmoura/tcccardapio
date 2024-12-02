@@ -3,7 +3,7 @@
 require_once('../conexao.php');
 
 $login = $_POST['txtLogin'];
-$senha = $_POST['txtSenha'];
+$senha = md5($_POST['txtSenha']);
 
 $query = $pdo->prepare("SELECT * FROM administrador WHERE email=:email AND senha=:senha");
 $query->bindValue(":email","$login");

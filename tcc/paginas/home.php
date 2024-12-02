@@ -57,11 +57,11 @@
                     <img src="imagens/19-09-2024-15-33-17-02.png" class="dish-image" alt="" style="height: 250px;">
 
                     <h3 class="dish-title">
-                        Stranberry Donuts
+                    Avelã
                     </h3>
 
                     <span class="dish-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    
                     </span>
 
                     <div class="dish-rate">
@@ -75,9 +75,10 @@
 
                     <div class="dish-price">
                         <h4>R$20,00</h4>
+                        <a href="index.php?pag=menu" >
                         <button class="btn-default">
-                            <i class="fa-solid fa-basket-shopping"></i>
-                        </button>
+                          <i class="fa-solid fa-basket-shopping"></i>
+                        </button></a>
                     </div>
                 </div>
 
@@ -89,11 +90,11 @@
                     <img src="imagens/19-09-2024-15-33-33-06.png" class="dish-image" alt="" style="height: 250px;">
 
                     <h3 class="dish-title">
-                        Lorem Ipsum
+                    Chocolate
                     </h3>
 
                     <span class="dish-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        
                     </span>
 
                     <div class="dish-rate">
@@ -107,9 +108,10 @@
 
                     <div class="dish-price">
                         <h4>R$20,00</h4>
+                        <a href="index.php?pag=menu">
                         <button class="btn-default">
                             <i class="fa-solid fa-basket-shopping"></i>
-                        </button>
+                        </button></a>
                     </div>
                 </div>
 
@@ -121,11 +123,11 @@
                     <img src="imagens/19-09-2024-15-33-49-05.png" class="dish-image" alt="" style="height: 250px;">
 
                     <h3 class="dish-title">
-                        Lorem Ipsum
+                    Pinkie Pie
                     </h3>
 
                     <span class="dish-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        
                     </span>
 
                     <div class="dish-rate">
@@ -139,9 +141,10 @@
 
                     <div class="dish-price">
                         <h4>R$20,00</h4>
+                        <a href="index.php?pag=menu">
                         <button class="btn-default">
                             <i class="fa-solid fa-basket-shopping"></i>
-                        </button>
+                        </button></a>
                     </div>
                 </div>
 
@@ -153,11 +156,11 @@
                     <img src="imagens/19-09-2024-15-34-01-10.png" class="dish-image" alt="" style="height: 250px;">
 
                     <h3 class="dish-title">
-                        Lorem Ipsum
+                    Simpsons
                     </h3>
 
                     <span class="dish-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        
                     </span>
 
                     <div class="dish-rate">
@@ -171,9 +174,10 @@
 
                     <div class="dish-price">
                         <h4>R$20,00</h4>
+                        <a href="index.php?pag=menu">
                         <button class="btn-default">
                             <i class="fa-solid fa-basket-shopping"></i>
-                        </button>
+                        </button></a>
                     </div>
                 </div>
             </div>

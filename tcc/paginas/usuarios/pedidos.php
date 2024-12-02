@@ -1,7 +1,10 @@
 <?php
 
 require_once('conexao.php');
-
+?>
+        <h1 id="titulo">Seus pedidos</h1>
+        <?php
+        
 $id = $_SESSION['usuario']['cod'];
 
 $query = $pdo->prepare("SELECT * FROM pedidos WHERE id_cliente = $id");
@@ -11,10 +14,13 @@ $total = @count($res);
 
 if($total > 0){
     for($i=0;$i<$total;$i++){
-        ?>
+
+        
+
+    ?>
    
     
-   <div class="card" style="width: 18rem;">
+   <div class="card" id="card-produto">
   <div class="card-body">
     <h5 class="card-title">Pedido nº <?=$res[$i]['id_pedidos']?></h5>
     <p class="card-text">Data: <?=date("d/m/Y", strtotime($res[0]['data']))?></p>
@@ -56,3 +62,5 @@ if($total > 0){
      }
 }
 ?>
+
+

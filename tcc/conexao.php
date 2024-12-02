@@ -2,8 +2,10 @@
 $user = 'root';
 //$user = 'dbdubahdonuts';
 $password = '';
+//$password = 'M@teus13DubahD';
 $banco = 'dbdubahdonuts';
 $servidor = 'localhost';
+//$servidor ='dbdubahdonuts.mysql.dbaas.com.br';
 
 date_default_timezone_set('America/Sao_Paulo');
 

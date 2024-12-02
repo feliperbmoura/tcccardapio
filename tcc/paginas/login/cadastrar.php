@@ -12,10 +12,12 @@ if($senha != $Csenha){
     exit;
 }
 
+$senha_cript = md5($senha);
+
 $query = $pdo->prepare("INSERT INTO cliente(nome,email,senha,status) VALUE(:nome,:email,:senha,1)");
 $query->bindValue(":nome","$nome");
 $query->bindValue(":email","$email");
-$query->bindValue(":senha","$senha");
+$query->bindValue(":senha","$senha_cript");
 $query->execute();
 
 echo "salvo com sucesso";

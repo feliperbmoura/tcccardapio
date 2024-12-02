@@ -71,11 +71,24 @@ section{
 }
 
 
-#editar-login{
-    background-color: white;
-    width: 50%;
+#card-produto{
+    width: 25rem;
     margin: auto;
     margin-top: 60px;
+    margin-bottom: 100px;
 }
 
-#editar-login{}
+
+
+/* EDITAR LOGIN */
+
+#editar-login{
+    background-color: #562b2db4;
+    width: 430px;
+    margin: auto;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 20px;
+}

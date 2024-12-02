@@ -14,7 +14,8 @@ require_once("../../conexao.php");
         $pedido = $res['0']['id_pedidos']+1;
     }
 
-    $forma= $_POST['fav_language'];
+    $forma= $_GET['metodo'];
+
 
     $data = date('Y-m-d');
     $hora = date('H:i:s');

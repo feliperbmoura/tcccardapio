@@ -41,7 +41,7 @@ if (isset($_SESSION['usuario'])) {
         <div id="linha"></div>
 
         <div id="pagar">
-            <a class="btn-default btn"href="index.php?pag=pagamento">Finalizar</a>
+            <a class="btn-default btn"href="index.php?pag=pagamento&total=<?=$sub?>">Finalizar</a>
             <button class=""onclick="cancelar()">Cancelar :(</button>
         </div>
     </div>
@@ -49,8 +49,9 @@ if (isset($_SESSION['usuario'])) {
        <?php
     } else {
         echo '
-    <h4 style="text-align: center;">Ahhh! parece que seu carrinho está vazio</h4>
-    <div id="add-mais">
+    <h4 style="text-align: center; ">Ahhh! parece que seu carrinho está vazio</h4>
+    
+    <div id="add-mais" style="margin-bottom: 300px;">
         <a href="index.php?pag=menu" id="">Adicionar</a>
     </div>';
     }
